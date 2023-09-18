@@ -1,4 +1,6 @@
+import CardFront from "./components/CardFront";
 import Form from "./components/Form";
+import CardBack from "./components/CardBack";
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -33,7 +35,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="left__section">        
+      <div className="left__section">
+        <CardFront data={data}/>
+        <CardBack cvc={data.cvc}/>
       </div>
       <div className="right__section">
         <Form data={data} handleUpdate={handleUpdate} />
