@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Success from "./components/Success";
 
 function App() {
-  const [submitted,setSubmitted] = useState(false)
+  const [isSubmitted,setIsSubmitted] = useState(true)
   const [data, setData] = useState({
     name: "name",
     number: "0000 0000 0000 0000",
@@ -30,12 +30,11 @@ function App() {
     year: update.year,
     cvc: update.cvc
     })
+    toggleSubmit()
   }
   const toggleSubmit = () => {
-    setSubmitted((prev) => !prev)
+    setIsSubmitted((prev) => prev=!prev)
   }
-
-  
 
   return (
     <div className="App">
@@ -45,11 +44,11 @@ function App() {
       </div>
       <div className="right__section">
         {
-          submitted ? (
+          isSubmitted ? (
             <Form data={data} handleUpdate={handleUpdate}/>
-          ):
-          (
-            <Success toggle={toggleSubmit}/>
+            ):
+            (
+              <Success toggleSubmit={toggleSubmit}/>
           )
         }
       </div>
