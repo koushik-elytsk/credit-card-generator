@@ -2,9 +2,10 @@ import CardFront from "./components/CardFront";
 import Form from "./components/Form";
 import CardBack from "./components/CardBack";
 import { useEffect, useState } from 'react';
+import Success from "./components/Success";
 
 function App() {
-
+  const [submitted,setSubmitted] = useState(false)
   const [data, setData] = useState({
     name: "name",
     number: "0000 0000 0000 0000",
@@ -30,6 +31,9 @@ function App() {
     cvc: update.cvc
     })
   }
+  const toggleSubmit = () => {
+    setSubmitted((prev) => !prev)
+  }
 
   
 
@@ -40,7 +44,14 @@ function App() {
         <CardBack cvc={data.cvc}/>
       </div>
       <div className="right__section">
-        <Form data={data} handleUpdate={handleUpdate} />
+        {
+          submitted ? (
+            <Form data={data} handleUpdate={handleUpdate}/>
+          ):
+          (
+            <Success toggle={toggleSubmit}/>
+          )
+        }
       </div>
     </div>
   );
