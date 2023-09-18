@@ -1,13 +1,113 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.left__section {
+  flex: 0.35;
+  height: 100%;
+  background: url("./assets/bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right__section {
+  flex: 0.65;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background: #d9d9d9;
+}
+
+label {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.155em;
+  text-align: left;
+  color: #404040;
+}
+
+input {
+  font-family: "Inter", sans-serif;
+  letter-spacing: 12.5%;
+  padding-left: 1.5em;
+  width: 382px;
+  height: 44px;
+  border-radius: 6px;
+  border: 1px solid #00000021;
+  outline: none;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.13), rgba(0, 0, 0, 0.13)),
+    linear-gradient(0deg, #ffffff, #ffffff);
+  margin-top: 0.5em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.btn {
+  cursor: pointer;
+  width: 382px;
+  height: 53px;
+  border-radius: 6px;
+  background: #220930;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.error {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  color: #f81212;
+  margin-top: 0.2em;
+  height: 15px;
+}
+
+.form__container>div {
+  margin-bottom: 1.75em;
+}
+
+@media screen and (max-width: 1400px){
+  .App {
+    flex-direction: column;
+  }
+  .right__section {
+    padding-top: 10em;
+  }
 }
