@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 
 const Form = ({ data, handleUpdate }) => {
   const [update, setUpdate] = useState({
